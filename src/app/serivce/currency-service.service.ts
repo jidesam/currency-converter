@@ -15,5 +15,9 @@ baseUrl = environment.apiUrl1
   getAllCurrency (): Observable<any>{
     return this.http.get<any>('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json')
   }
+
+  convertCurrency(base: any): Observable<any> {
+    return this.http.get<any>(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${base}.json`)
+  }
   
 }
